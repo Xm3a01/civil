@@ -1,5 +1,7 @@
 <?php
 
+use App\Article;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +13,16 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/test', function () {
-    return view('pages.show');
+Route::get('/test/{id}', function ($id) {
+    $article = Article::findOrFail($id);
+    $nextArticle = Article::findOrFail($id + 1);
+    $prevArticle = Article::findOrFail($id - 1);
+    
+    return view('pages.show')->withArticle($article)->withNextArticle($nextArticle)->withPrevArticle($prevArticle);
 });
 
 Auth::routes();

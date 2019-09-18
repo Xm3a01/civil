@@ -22,9 +22,21 @@
             <form class="form-material form-horizontal" method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
+                   <label class="col-md-12" for="body">Article title</label>
+                    <div class="col-md-12">
+                        <input class="form-control" name="title" placeholder="Title">
+                    </div>
+                </div>
+                <div class ="form-group">
                     <label class="col-md-12" for="body">Article body</label>
                     <div class="col-md-12">
                         <textarea class="form-control" id="mymce" name="body" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group"style="direction:rtl; text-align:right">
+                   <label class="col-md-12" for="ar_title">العنوان</label>
+                    <div class="col-md-12">
+                        <input class="form-control" name="ar_title" placeholder=" العنوان">
                     </div>
                 </div>
                 <div class="form-group">

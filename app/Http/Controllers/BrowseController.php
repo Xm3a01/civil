@@ -11,16 +11,16 @@ class BrowseController extends Controller
 {
     public function home()
     {
+        $art = '';
         $article = DB::table('articles')->latest()->limit(1)->first();
         $articles = DB::table('articles')->latest()->limit(3)->get();
-        $nextId = (int)DB::table('articles')->max('id') - 1;
+        $nextId = (int)DB::table('articles')->max('id');
         $article2 = Article::findOrfail($nextId);
         $art = strip_tags(str_limit($article2->body, $limit=400));
-
         $events = DB::table('events')->latest()->limit(3)->get();
 
         return view('pages.index')
-            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles);
+            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles)->withArticle2($article2);
     }
     
     public function about()

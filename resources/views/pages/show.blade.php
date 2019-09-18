@@ -7,7 +7,7 @@
           <div class="col-lg-8 posts-list">
              <div class="single-post">
                 <div class="feature-img">
-                   <img class="img-fluid" src="{{storage::url('$article->img')}}" alt="">
+                   <img class="img-fluid" src="{{Storage::url('$article->img')}}" alt="">
                 </div>
                 <div class="blog_details">
                    <h2>{{$article->title}}
@@ -56,7 +56,7 @@
                          </div>
                          <div class="thumb">
                             <a href="#">
-                               <img class="img-fluid" src="{{$nextArticle->img}}" alt="">
+                               <img class="img-fluid" src="{{Storage::url($nextArticle->img)}}" alt="">
                             </a>
                          </div>
                       </div>

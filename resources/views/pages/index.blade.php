@@ -2,7 +2,7 @@
 
 @section('content')
 <br>
-<section class="banner_part" style="background:url('./img/bg-count.jpg') no-repeat top right; background-size:600px 730px;">
+<section class="banner_part" style="background:url('{{asset('storage/'.$article->img)}}') no-repeat top right; background-size:600px 730px;">
     <div class="container">
     <div class="row align-items-center">
     <div class="col-lg-6 col-xl-6">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <div class="about_part_img">
-                            <img src="img/4.png" alt="">
+                            <img src="{{asset('storage/'.$article2->img)}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         <div class="col-lg-4 col-sm-6 all buildings">
                             <div class="single_our_project">
                                 <div class="single_offer">
-                                    <img src="img/7.jpg" alt="offer_img_1">
+                                    <img src="{{Storage::url($item->img)}}" alt="offer_img_1">
                                     <div class="hover_text">
                                         <p>Bank Protected</p>
                                         <a href="#"><h2>{{strip_tags(str_limit($item->body, $limit=30, $end='...'))}}</h2></a>
