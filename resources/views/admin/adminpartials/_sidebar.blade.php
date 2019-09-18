@@ -13,7 +13,7 @@
                             <span class="fa arrow"></span>
                         </span>
                     </a>
-                    <ul class="nav nav-second-level collapse">
+                    <ul class="nav nav-second-level ">
                         <li>
                             <a href="{{route('abouts.index')}}">All Profiles</a>
                         </li>
@@ -29,7 +29,7 @@
                             <span class="fa arrow"></span>
                         </span>
                     </a>
-                    <ul class="nav nav-second-level collapse">
+                    <ul class="nav nav-second-level">
                         <li>
                             <a href="{{route('articles.index')}}">All Articles</a>
                         </li>

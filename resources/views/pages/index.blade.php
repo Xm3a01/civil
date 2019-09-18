@@ -2,7 +2,7 @@
 
 @section('content')
 <br>
-<section class="banner_part" style="background:url('{{asset('storage/'.$article->img)}}') no-repeat top right; background-size:600px 730px;">
+<section class="banner_part" style="background:url('{{Storage::url($article->img)}}') no-repeat top right; background-size:600px 730px;">
     <div class="container">
     <div class="row align-items-center">
     <div class="col-lg-6 col-xl-6">
@@ -25,9 +25,9 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-6 col-lg-6">
-                        <div class="about_part_text">
+                        <div class="about_part_text en_part">
                             <h2>We Are The best</h2>
-                            <p>{{ $art }}</p>
+                            <p>{!! $art !!}</p>
                             <div class="about_text_iner">
                                 <div class="about_text_counter">
                                     <h2 id="years"></h2>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <div class="about_part_img">
-                            <img src="{{asset('storage/'.$article2->img)}}" alt="">
+                            <img src="{{Storage::url($article2->img)}}" alt="">
                         </div>
                     </div>
                 </div>
