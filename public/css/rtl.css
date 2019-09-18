@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+html {
+    font-family: 'Cairo', sans-serif;
+}
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+
+.experiance_part {
+    background-image: url(../img/experiance_overlay.png);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.about_part .about_part_text p  {
+    margin-left: 25px;
+}
+
+.banner_part  .banner_text  .banner_text_iner  p {
+    margin-right: 15px;
+    margin-left: 109px;
+    padding-right: 20px;
+}
+
+.banner_part {
+    margin-left: 32px;
+    margin-top: 50px;
+}
+.banner_part .banner_text h1 {
+    margin-right: 34px;
+}
+
+.banner_part .banner_text .btn_1 {
+    margin-right: 34px;
+}
+
+@media only screen and (min-width: 436px) and (max-width: 1022px)  {
+    .banner_part  .banner_text  .banner_text_iner  p {
+        color: aliceblue;
+    }
+}
+
+.our_project .single_our_project .single_offer img {
+    height: 447px;;
+}
+
+.contact-info__icon i, .contact-info__icon span {
+    padding-left: 22px;
+}
