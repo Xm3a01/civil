@@ -13,7 +13,7 @@
                             <span class="fa arrow"></span>
                         </span>
                     </a>
-                    <ul class="nav nav-second-level ">
+                    <ul class="nav nav-third-level ">
                         <li>
                             <a href="{{route('abouts.index')}}">All Profiles</a>
                         </li>
