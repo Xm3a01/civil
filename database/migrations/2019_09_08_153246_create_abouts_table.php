@@ -21,6 +21,11 @@ class CreateAboutsTable extends Migration
             $table->string('ar_address');
             $table->string('tel');
             $table->string('email');
+            $table->string('img');
+            $table->bigInteger('num1');
+            $table->bigInteger('num2');
+            $table->bigInteger('num3');
+            $table->bigInteger('num4');
             $table->timestamps();
         });
     }

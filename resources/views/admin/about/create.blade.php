@@ -58,6 +58,26 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                           <label class="col-sm-12" for="num1">Number</label>
+                           <input type="number" name="num1" id="" class="form-control"> 
+                        </div>
+                        <div class="col-md-3">
+                          <label class="col-sm-12" for="img">Number</label>
+                          <input type="number" name="num2" id="" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-sm-12" for="img">Number</label>
+                            <input type="number" name="num3" id="" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-sm-12" for="img">Number</label>
+                            <input type="number" name="num4" id="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                         <label class="col-sm-12" for="img">Upload Profile image</label>
                         <div class="col-sm-12">
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">

@@ -7,17 +7,17 @@
           <div class="col-lg-8 posts-list">
              <div class="single-post">
                 <div class="feature-img">
-                   <img class="img-fluid" src="{{Storage::url('$article->img')}}" alt="">
+                   <img class="img-fluid" src="{{Storage::url($article->img)}}" alt="">
                 </div>
                 <div class="blog_details">
                    <h2>{{$article->title}}
                    </h2>
                    <p class="excert">
-                      {{$article->body}}
+                      {!! $article->body !!}
                    </p>
                 </div>
              </div>
-             <div class="navigation-top">
+             {{-- <div class="navigation-top">
                 <div class="navigation-area">
                    <div class="row">
                        @if($prevArticle)
@@ -55,7 +55,7 @@
                             </a>
                          </div>
                          <div class="thumb">
-                            <a href="#">
+                            <a href="/nextprev">
                                <img class="img-fluid" src="{{Storage::url($nextArticle->img)}}" alt="">
                             </a>
                          </div>
@@ -63,52 +63,27 @@
                       @endif
                    </div>
                 </div>
-             </div>
+             </div> --}}
           </div>
           <div class="col-lg-4">
              <div class="blog_right_sidebar">
                 <aside class="single_sidebar_widget popular_post_widget">
                    <h3 class="widget_title">All Articles</h3>
+                   @foreach ($articles as $article)
                    <div class="media post_item">
-                      <img src="img/post/post_1.png" alt="post">
+                      <img src="{{Storage::url($article->img)}}" width="100" height="100" alt="post">
                       <div class="media-body">
-                         <a href="single-blog.html">
-                            <h3>From life was you fish...</h3>
+                         <a href="{{route('civil.show',$article->id)}}">
+                            <h3>{{$article->title}}</h3>
                          </a>
-                         <p>January 12, 2019</p>
+                         <p>{{date("jS F, Y", strtotime($article->created_at))}}</p>
                       </div>
                    </div>
-                   <div class="media post_item">
-                      <img src="img/post/post_2.png" alt="post">
-                      <div class="media-body">
-                         <a href="single-blog.html">
-                            <h3>The Amazing Hubble</h3>
-                         </a>
-                         <p>02 Hours ago</p>
-                      </div>
-                   </div>
-                   <div class="media post_item">
-                      <img src="img/post/post_3.png" alt="post">
-                      <div class="media-body">
-                         <a href="single-blog.html">
-                            <h3>Astronomy Or Astrology</h3>
-                         </a>
-                         <p>03 Hours ago</p>
-                      </div>
-                   </div>
-                   <div class="media post_item">
-                      <img src="img/post/post_4.png" alt="post">
-                      <div class="media-body">
-                         <a href="single-blog.html">
-                            <h3>Asteroids telescope</h3>
-                         </a>
-                         <p>01 Hours ago</p>
-                      </div>
-                   </div>
+                   @endforeach
                 </aside>
              </div>
           </div>
        </div>
     </div>
- </section>
+</section>
 @endsection

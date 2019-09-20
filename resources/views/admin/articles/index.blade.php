@@ -38,8 +38,8 @@
                             @foreach($articles as $article)
                             <tr role="row" class="odd">
                                 <th class="sorting_1">{{$article->id}}</th>
-                                <td>{!! str_limit($article->body, $limit=150 , $end='<a href='.route('events.index').'> ... Read more </a>') !!}</td>
-                                <td>{!! str_limit($article->ar_body, $limit=100 , $end='<a href='.route('events.index').'> ... Read more </a>') !!}</td>
+                                <td>{!! str_limit($article->body, $limit=20 , $end='<a href='.route('events.index').'> ... Read more </a>') !!}</td>
+                                <td>{!! str_limit($article->ar_body, $limit=20 , $end='<a href='.route('events.index').'> ... Read more </a>') !!}</td>
                                 <td><img src="{{Storage::url($article->img)}}" width="60" height="60" alt="logo"></td>
                                 <td class="text-nowrap">
                                     <a href="{{route('articles.edit',$article->id)}}" data-toggle="tooltip" data-original-title="Edit">

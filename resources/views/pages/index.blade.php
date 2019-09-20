@@ -11,7 +11,7 @@
     <h1>Civilian<span>Sudan
     </span></h1>
      <p>{!! str_limit($article->body, $limit=500)  !!}</p>
-     <a href="#" class="btn_1">View more </a>
+     <a href="{{route('civil.show',$article->id)}}" class="btn_1">View more </a>
                             </div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@
                                 <div class="single_offer">
                                     <img src="{{Storage::url($item->img)}}" alt="offer_img_1">
                                     <div class="hover_text">
-                                        <p>Bank Protected</p>
-                                        <a href="#"><h2>{{strip_tags(str_limit($item->body, $limit=30, $end='...'))}}</h2></a>
+                                        <p>Recently Post</p>
+                                        <a href="{{route('civil.show',$item->id)}}"><h2>{{$item->title}}</h2></a>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                             <img src="img/icon/Icon_1.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">60</span>
+                            <span class="counter">{{$about->num1}}</span>
                             <h4> <span>Satisfied</span> Client</h4>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                             <img src="img/icon/Icon_2.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">10</span>
+                            <span class="counter">{{$about->num2}}</span>
                             <h4> <span>Worldwide</span> Branches</h4>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                             <img src="img/icon/Icon_3.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">80</span>
+                            <span class="counter">{{$about->num3}}</span>
                             <h4> <span>Total</span> Projects</h4>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                             <img src="img/icon/Icon_4.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">24</span>
+                            <span class="counter">{{$about->num4}}</span>
                             <h4> <span>Work</span> Finished</h4>
                         </div>
                     </div>

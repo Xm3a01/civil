@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-6 col-lg-6">
                     <div class="about_part_img" style="direction:ltr; text-align:left">
-                        <img src="img/download.jpg" alt="">
+                        <img src="{{Storage::url($about->img)}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">

@@ -11,7 +11,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-6 col-lg-6">
                     <div class="about_part_img">
-                        <img src="{{asset('img/download.jpg')}}" alt="">
+                        <img src="{{Storage::url($about->img)}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">
@@ -20,7 +20,7 @@
                         <p>{!! $about->ar_profile !!}.</p>
                         <ul>
                             <li>
-                                <span class="flaticon-drop" style="text-align:left"></span>
+                                <span class="flaticon-drop" style="text-align:left; left: -120px;"></span>
                                 <h3>العنوان</h3>
                                 <p>{{$about->ar_address}} </p>
                             </li>

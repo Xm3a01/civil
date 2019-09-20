@@ -19,10 +19,8 @@ Route::get('/', function () {
 
 Route::get('/test/{id}', function ($id) {
     $article = Article::findOrFail($id);
-    $nextArticle = Article::findOrFail($id + 1);
-    $prevArticle = Article::findOrFail($id - 1);
     
-    return view('pages.show')->withArticle($article)->withNextArticle($nextArticle)->withPrevArticle($prevArticle);
+    return view('pages.show')->withArticle($article);
 });
 
 Auth::routes();
@@ -31,12 +29,14 @@ Route::get('/', 'BrowseController@home')->name('civil.home');
 Route::get('/about', 'BrowseController@about')->name('civil.about');
 Route::get('/contact', 'BrowseController@contact')->name('civil.contact');
 Route::get('/events', 'BrowseController@event')->name('civil.events');
+Route::get('/show/{id}', 'BrowseController@show')->name('civil.show');
 //Arbic route
 // Route::group(['prefix' => app()->getlocale()], function() {
 Route::get('/ar', 'BrowseController@ar_home')->name('index.ar');
 Route::get('about/ar', 'BrowseController@ar_about')->name('about.ar');
 Route::get('contact/ar', 'BrowseController@ar_contact')->name('contact.ar');
 Route::get('events/ar', 'BrowseController@ar_event')->name('events.ar');
+Route::get('/show/{id}/ar', 'BrowseController@ar_show')->name('show.ar');
 
 Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/', 'DashboardController@index')->name('dashboard.index');

@@ -46,6 +46,7 @@ class AboutController extends Controller
                 'ar_address'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
+                'img' => 'required'
             ]);
             $about = About::create([
                 'profile'=>$request->profile,
@@ -53,7 +54,12 @@ class AboutController extends Controller
                 'address'=>$request->address,
                 'ar_address'=>$request->ar_address,
                 'tel'=>$request->phone,
-                'email'=>$request->email
+                'email'=>$request->email,
+                'num1' => $request->num1,
+                'num2' => $request->num2,
+                'num3' => $request->num3,
+                'num4' => $request->num4,
+                'img'=>$request->img->store('public/about'),
             ]);
 
             if($about->save()) {

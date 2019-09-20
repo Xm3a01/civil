@@ -14,7 +14,7 @@
     <h1>  عنوان <span>المقال 
     </span></h1>
      <p>{!! $article->ar_body !!}</p>
-     <a href="#" class="btn_1">View more </a>
+     <a href="{{route('show.ar',$article->id)}}" class="btn_1">المزيد </a>
                             </div>
                         </div>
                     </div>

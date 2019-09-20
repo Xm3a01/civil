@@ -18,9 +18,10 @@ class BrowseController extends Controller
         $article2 = Article::findOrfail($nextId);
         $art = strip_tags(str_limit($article2->body, $limit=400));
         $events = DB::table('events')->latest()->limit(3)->get();
+        $about = DB::table('abouts')->latest()->limit(1)->first();
 
         return view('pages.index')
-            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles)->withArticle2($article2);
+            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles)->withArticle2($article2)->withAbout($about);
     }
     
     public function about()
@@ -31,7 +32,8 @@ class BrowseController extends Controller
 
     public function contact()
     {
-        return view('pages.contact');
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+        return view('pages.contact')->withAbout($about);
     }
 
     public function event()
@@ -44,10 +46,9 @@ class BrowseController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        $nextArticle = Article::findOrFail($id + 1);
-        $prevArticle = Article::findOrFail($id - 1);
+        $articles = Article::all();
         
-        return view('pages.show')->withArticle($article)->withNextArticle($nextArticle)->withPrevArticle($prevArticle);
+        return view('pages.show')->withArticle($article)->withArticles($articles);
         
     }
 
@@ -60,9 +61,9 @@ class BrowseController extends Controller
         $art = strip_tags(str_limit($article2->ar_body, $limit=400), $end=' ... <a href="#" class="btn_1">View more </a>');
 
         $events = DB::table('events')->latest()->limit(3)->get();
-
+        $about = DB::table('abouts')->latest()->limit(1)->first();
         return view('pages.ar.index')
-            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles)->withArticle2($article2);
+            ->withArticle($article)->withEvents($events)->withArt($art)->withArticles($articles)->withArticle2($article2)->withAbout($about);
     }
     
     public function ar_about()
@@ -73,7 +74,8 @@ class BrowseController extends Controller
 
     public function ar_contact()
     {
-        return view('pages.ar.contact');
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+        return view('pages.ar.contact')->withAbout($about);
     }
 
     public function ar_event()
@@ -82,4 +84,16 @@ class BrowseController extends Controller
 
         return view('pages.ar.events')->withEvents($events);
     }
+
+    public function ar_show($id)
+    {
+        $article = Article::findOrFail($id);
+        $articles = Article::all();
+        
+        return view('pages.ar.show')->withArticle($article)->withArticles($articles);
+        
+    }
+
+
+    //controll function 
 }

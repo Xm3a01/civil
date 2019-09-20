@@ -12,6 +12,11 @@ class About extends Model
         'address',
         'ar_address',
         'tel',
-        'email'
+        'email',
+        'img',
+        'num1',
+        'num2',
+        'num3',
+        'num4',
     ];
 }
