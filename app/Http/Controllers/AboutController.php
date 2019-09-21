@@ -119,6 +119,11 @@ class AboutController extends Controller
             $about->ar_address = $request->ar_address;
             $about->tel = $request->phone;
             $about->email = $request->email;
+            $about->num1 = $request->num1;
+                $about->num2  =  $request->num2;
+                $about->num3  =  $request->num3;
+                $about->num4  =  $request->num4;
+                $about->img = $request->img->store('public/about');
 
         if($about->save()) {
             \Session::flash('success','Your Profile is successfully create');
@@ -137,6 +142,10 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $about  = About::findOrFail($id);
+        $about->delete();
+        
+        \Session::flash('success', 'Your event is successfully delete');
+        return Redirect::to('/dashboard/abouts');
     }
 }

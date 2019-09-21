@@ -106,6 +106,10 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article  = Article::findOrFail($id);
+        $article->delete();
+        
+        \Session::flash('success', 'Your event is successfully delete');
+        return Redirect::to('/dashboard/articles');
     }
 }

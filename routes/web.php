@@ -46,5 +46,5 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::resource('events', 'EventController')->except(['create' , 'edit','update']);
     Route::put('event/update', 'EventController@update')->name('event.update');
     Route::delete('event/delete', 'EventController@delete')->name('event.delete');
-    Route::resource('abouts','AboutController')->except(['destroy', ]);
+    Route::resource('abouts','AboutController')->except(['show', ]);
 });

@@ -57,6 +57,14 @@
                                     <a href="{{route('abouts.edit',$about->id)}}" data-toggle="tooltip" data-original-title="Edit">
                                         <i class="fa fa-pencil text-inverse m-r-10"></i>
                                     </a>
+                                    <a  onclick="event.preventDefault();
+                                    document.getElementById('delete').submit();" data-toggle="confirmation" data-original-title="Delete">
+                                        <i class="fa fa-close text-danger"></i>
+                                    </a>
+                                    <form method="POST" id="delete" action="{{route('abouts.destroy',$about->id )}}">
+                                       @csrf
+                                       @method('DELETE')
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
