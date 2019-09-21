@@ -11,9 +11,9 @@
     <div class="col-lg-6 col-xl-6">
     <div class="banner_text">
     <div class="banner_text_iner">
-    <h1>  عنوان <span>المقال 
+    <h1><span>{{$article->ar_title}} 
     </span></h1>
-     <p>{!! $article->ar_body !!}</p>
+     <p>{!! str_limit($article->ar_body, $limit=500) !!}</p>
      <a href="{{route('show.ar',$article->id)}}" class="btn_1">المزيد </a>
                             </div>
                         </div>
@@ -72,8 +72,8 @@
                                 <div class="single_offer">
                                     <img src="{{Storage::url($item->img)}}" alt="offer_img_1">
                                     <div class="hover_text">
-                                        <p>Bank Protected</p>
-                                        <a href="#"><h2>{{strip_tags(str_limit($item->ar_body, $limit=30, $end='...'))}}</h2></a>
+                                        <p>اخر المقالات</p>
+                                        <a href="{{route('show.ar',$article->id)}}"><h2>{{$article->ar_title}}</h2></a>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                            <span class="ti-time" style="font-size:15px"></span>
                                            <h5>ابتدئامن</h5>
                                            <p>--:--</p>
-                                           <code>{{$event->event_start}}</code>
+                                           <code>{{ date("jS F, Y", strtotime($event->event_start))}}</code>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
@@ -116,7 +116,7 @@
                                            <span class="ti-time" style="font-size:15px"></span>
                                            <h5>الى</h5>
                                            <p>--:--</p>
-                                           <code>{{$event->event_end}}</code>
+                                           <code>{{ date("jS F, Y", strtotime($event->event_end))}}</code>
                                       </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@
                             <img src="img/icon/Icon_1.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">60</span>
-                            <h4> <span>Satisfied</span> Client</h4>
+                            <span class="counter">{{$about->num1}}</span>
+                            <h4> <span>رضاء</span> العملاء</h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -144,8 +144,8 @@
                             <img src="img/icon/Icon_2.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">10</span>
-                            <h4> <span>Worldwide</span> Branches</h4>
+                            <span class="counter">{{$about->num2}}</span>
+                            <h4> <span>عدد</span> المنصات</h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -153,8 +153,8 @@
                             <img src="img/icon/Icon_3.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">80</span>
-                            <h4> <span>Total</span> Projects</h4>
+                            <span class="counter">{{$about->num3}}</span>
+                            <h4> <span>مجموع</span> المشاريع</h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -162,8 +162,8 @@
                             <img src="img/icon/Icon_4.svg" alt="">
                         </div>
                         <div class="single_member_counter">
-                            <span class="counter">24</span>
-                            <h4> <span>Work</span> Finished</h4>
+                            <span class="counter">{{$about->num4}}</span>
+                            <h4> <span>الاعمال</span> المنجزه</h4>
                         </div>
                     </div>
                 </div>

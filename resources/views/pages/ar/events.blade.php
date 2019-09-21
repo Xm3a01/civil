@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xl-5">
                     <div class="section_tittle">
-                        <h2>Ours Events</h2>
+                        <h2>الاحداث</h2>
                     </div>
                 </div>
             </div>

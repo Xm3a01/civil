@@ -80,6 +80,9 @@
                       </div>
                    </div>
                    @endforeach
+                   <br>
+                   <hr>
+                   <a class="btn btn-1" href="{{route('civil.all')}}">-> Show All</a>
                 </aside>
              </div>
           </div>

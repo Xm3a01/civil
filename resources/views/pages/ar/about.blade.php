@@ -20,12 +20,12 @@
                         <p>{!! $about->ar_profile !!}.</p>
                         <ul>
                             <li>
-                                <span class="flaticon-drop" style="text-align:left; left: -120px;"></span>
+                                {{-- <span class="flaticon-drop" style="text-align:left; left: -120px;"></span> --}}
                                 <h3>العنوان</h3>
                                 <p>{{$about->ar_address}} </p>
                             </li>
                             <li>
-                                <span class="flaticon-ui" style="text-align:left"></span>
+                                {{-- <span class="flaticon-ui" style="text-align:left"></span> --}}
                                 <h3>معلومات الاتصال</h3>
                                 <p>{{$about->tel}} - {{$about->email}} </p>
                             </li>

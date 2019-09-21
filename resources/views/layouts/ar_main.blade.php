@@ -13,7 +13,7 @@
 
      @yield('content')
 
-     @include('_includes.footer')
+     @include('_includes.ar.footer')
      @include('_includes.scripts')
      @yield('scripts')
 </body>

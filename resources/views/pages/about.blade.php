@@ -16,12 +16,12 @@
                         <p>{!! $about->profile !!}.</p>
                         <ul>
                             <li>
-                                <span class="flaticon-drop"></span>
+                                {{-- <span class="flaticon-drop"></span> --}}
                                 <h3>Address</h3>
                                 <p>{{$about->address}} </p>
                             </li>
                             <li>
-                                <span class="flaticon-ui"></span>
+                                {{-- <span class="flaticon-ui"></span> --}}
                                 <h3>conact</h3>
                                 <p>{{$about->tel}} - {{$about->email}} </p>
                             </li>

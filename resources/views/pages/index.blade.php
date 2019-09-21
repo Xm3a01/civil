@@ -2,13 +2,13 @@
 
 @section('content')
 <br>
-<section class="banner_part" style="background:url('{{Storage::url($article->img)}}') no-repeat top right; background-size:600px 730px;">
+<section class="banner_part" style="background:url('{{Storage::url($article->img)}}') no-repeat  right; background-size:600px 730px;">
     <div class="container">
     <div class="row align-items-center">
     <div class="col-lg-6 col-xl-6">
     <div class="banner_text">
     <div class="banner_text_iner">
-    <h1>Civilian<span>Sudan
+    <h1><span>{{$article->title}}
     </span></h1>
      <p>{!! str_limit($article->body, $limit=500)  !!}</p>
      <a href="{{route('civil.show',$article->id)}}" class="btn_1">View more </a>
@@ -54,7 +54,7 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-5 col-sm-10">
                         <div class="section_tittle">
-                            <h2>Civilian Sudan</h2>
+                            {{-- <h2>Civilian Sudan</h2> --}}
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-10">
@@ -90,50 +90,47 @@
 
 
         <section class="our_service padding_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5">
-                        <div class="section_tittle">
-                            <h2>Ours Sudan</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="section_tittle">
+                                <h2>Ours Events</h2>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        @foreach ($events as $key => $event)    
+                        <div class="col-sm-6 col-xl-4">
+                            <div class="single_feature">
+                                <div class="single_service">
+                                    <span class="fa fa-calendar"></span>
+                                    <h4>Event No: {{$key +1}}</h4>
+                                    <p>{{$event->event_name}}</p>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="single_project_details_widget">
+                                               <span class="ti-time" style="font-size:15px"></span>
+                                               <h5>Start Date</h5>
+                                               <p>--:--</p>
+                                               <code>{{$event->event_start}}</code>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single_project_details_widget">
+                                               <span class="ti-time" style="font-size:15px"></span>
+                                               <h5>End Date</h5>
+                                               <p>--:--</p>
+                                               <code>{{$event->event_end}}</code>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="single_feature">
-                            <div class="single_service">
-                                <span class="flaticon-ui"></span>
-                                <h4>culture</h4>
-                                <p>Set have great you male grasses yielding yielding first their to
-                                    called deep abundantly Set have great you male</p>
-                                <a href="#" class="btn_3">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="single_feature">
-                            <div class="single_service">
-                                    <span class="flaticon-ui"></span>
-                                <h4>civilization</h4>
-                                <p>Set have great you male grasses yielding yielding first their to called
-                                    deep abundantly Set have great you male</p>
-                                <a href="#" class="btn_3">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-4">
-                        <div class="single_feature">
-                            <div class="single_service single_service_2">
-                                    <span class="flaticon-ui"></span>
-                                <h4>habit</h4>
-                                <p>Set have great you male grasses yielding yielding first their to called deep
-                                    abundantly Set have great you male</p>
-                                <a href="#" class="btn_3">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <section class="member_counter padding_bottom" style="margin-top:100px;">

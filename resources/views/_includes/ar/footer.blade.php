@@ -5,13 +5,13 @@
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-4 col-xl-3">
                 <div class="single-footer-widget footer_1">
-                    <a href="index.html">CIVILIAN SD</a>
+                    <a href="index.html">الدوله المدنيه</a>
                     <p>So seed seed green that winged cattle in Gahesd thing made fly you're no divided deep move lan Gathering thing us land years living on floor me the cavaty do buty fresh</p>
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 col-md-4">
                 <div class="single-footer-widget footer_2">
-                    <h4>Media</h4>
+                    <h4>وسائل التواصل</h4>
                     <div class="d-sm-flex justify-content-between text-center">
                         <ul class="social-icons row">
                            <li class="col-md-3"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
@@ -24,12 +24,12 @@
             </div>
             <div class="col-xl-3 col-sm-6 col-md-4">
                 <div class="single-footer-widget footer_2">
-                    <h4>Contact info</h4>
+                    <h4>معلومات التواصل</h4>
                     <div class="contact_info"> 
-                        <p>Sudan-Khartoum</p>
-                        <p><span> Address :</span>{{$about->address}}</p>
-                        <p><span> Phone :</span>{{$about->tel}}</p>
-                        <p><span> Email : </span>{{$about->email}} </p>
+                        <p>الخرطوم - السودان</p>
+                        <p><span> العنوان :  </span>{{$about->ar_address}}</p>
+                        <p><span> التلفون : </span>{{$about->tel}}</p>
+                        <p><span> البريد : </span>{{$about->email}} </p>
                     </div>
                 </div>
             </div>

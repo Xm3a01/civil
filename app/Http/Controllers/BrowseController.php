@@ -14,7 +14,7 @@ class BrowseController extends Controller
         $art = '';
         $article = DB::table('articles')->latest()->limit(1)->first();
         $articles = DB::table('articles')->latest()->limit(3)->get();
-        $nextId = (int)DB::table('articles')->max('id');
+        $nextId = (int)DB::table('articles')->max('id') - 1;
         $article2 = Article::findOrfail($nextId);
         $art = strip_tags(str_limit($article2->body, $limit=400));
         $events = DB::table('events')->latest()->limit(3)->get();
@@ -39,18 +39,30 @@ class BrowseController extends Controller
     public function event()
     {
         $events = Event::all();
+        $about = DB::table('abouts')->latest()->limit(1)->first();
 
-        return view('pages.events')->withEvents($events);
+        return view('pages.events')->withEvents($events)->withAbout($about);
     }
 
     public function show($id)
     {
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+        $recently = DB::table('articles')->latest()->limit(3)->get();
         $article = Article::findOrFail($id);
         $articles = Article::all();
         
-        return view('pages.show')->withArticle($article)->withArticles($articles);
+        return view('pages.show')->withArticle($article)->withArticles($articles)->withRecently($recently)->withAbout($about);
         
     }
+
+    public function all()
+    {
+        $articles = Article::all();
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+        return view('pages.all')->withArticles($articles)->withAbout($about);
+    }
+    
+    //arabic
 
     public function ar_home()
     {
@@ -81,17 +93,28 @@ class BrowseController extends Controller
     public function ar_event()
     {
         $events = Event::all();
+        $about = DB::table('abouts')->latest()->limit(1)->first();
 
-        return view('pages.ar.events')->withEvents($events);
+        return view('pages.ar.events')->withEvents($events)->withAbout($about);
     }
 
     public function ar_show($id)
     {
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+        $recently = DB::table('articles')->latest()->limit(3)->get();
         $article = Article::findOrFail($id);
         $articles = Article::all();
         
-        return view('pages.ar.show')->withArticle($article)->withArticles($articles);
+        return view('pages.ar.show')->withArticle($article)->withArticles($articles)->withRecently($recently)->withAbout($about);
         
+    }
+
+    public function ar_all()
+    {
+        $articles = Article::all();
+        $about = DB::table('abouts')->latest()->limit(1)->first();
+
+        return view('pages.all')->withArticles($articles)->withAbout($about);
     }
 
 

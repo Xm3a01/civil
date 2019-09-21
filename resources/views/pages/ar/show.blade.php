@@ -25,8 +25,8 @@
               <div class="col-lg-4">
                  <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget popular_post_widget">
-                       <h3 class="widget_title">المقالات</h3>
-                       @foreach ($articles as $article)
+                       <h3 class="widget_title">اخر المقالات</h3>
+                       @foreach ($recently as $article)
                        <div class="media post_item">
                           <img src="{{Storage::url($article->img)}}" width="100" height="100" alt="post">
                           <div class="media-body" style ="margin-right:15px">
@@ -37,10 +37,13 @@
                           </div>
                        </div>
                        @endforeach
+                       <br>
+                       <hr>
+                       <a class="btn btn-1" href="{{route('all.ar')}}">-> عرض الكل</a>
                     </aside>
                  </div>
               </div>
            </div>
-        </div>
+        </div>      {{-- <div class="divider"></div> --}}
 </section>
 @endsection
