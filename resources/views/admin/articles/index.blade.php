@@ -45,10 +45,10 @@
                                     <a href="{{route('articles.edit',$article->id)}}" data-toggle="tooltip" data-original-title="Edit">
                                         <i class="fa fa-pencil text-inverse m-r-10"></i>
                                     </a>
-                                    <button class="btn" onclick="event.preventDefault();
+                                    <a class="btn" onclick="event.preventDefault();
                                     document.getElementById('delete').submit();" data-toggle="confirmation" data-original-title="Delete">
                                         <i class="fa fa-close text-danger"></i>
-                                    </button>
+                                    </a>
                                     <form method="POST" id="delete" action="{{route('articles.destroy',$article->id )}}">
                                        @csrf
                                        @method('DELETE')

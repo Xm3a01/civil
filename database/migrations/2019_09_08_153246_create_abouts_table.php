@@ -26,6 +26,10 @@ class CreateAboutsTable extends Migration
             $table->bigInteger('num2');
             $table->bigInteger('num3');
             $table->bigInteger('num4');
+            $table->string('face')->nullable();
+            $table->string('inst')->nullable();
+            $table->string('twit')->nullable();
+            $table->string('gplus')->nullable();
             $table->timestamps();
         });
     }

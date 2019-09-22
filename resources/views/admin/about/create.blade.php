@@ -78,6 +78,26 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                           <label class="col-sm-12" for="num1">Facebook</label>
+                           <input type="text" name="face" id="" class="form-control"> 
+                        </div>
+                        <div class="col-md-3">
+                          <label class="col-sm-12" for="img">Instgram</label>
+                          <input type="text" name="inst" id="" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-sm-12" for="img">Twitter</label>
+                            <input type="text" name="twit" id="" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-sm-12" for="img">Google + </label>
+                            <input type="text" name="gplus" id="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                         <label class="col-sm-12" for="img">Upload Profile image</label>
                         <div class="col-sm-12">
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">

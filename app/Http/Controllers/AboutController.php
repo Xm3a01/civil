@@ -59,6 +59,10 @@ class AboutController extends Controller
                 'num2' => $request->num2,
                 'num3' => $request->num3,
                 'num4' => $request->num4,
+                 'face' => $request->face,
+                 'inst'  =>  $request->inst,
+                 'twit'  =>  $request->twit,
+                 'gplus'  =>  $request->gplus,
                 'img'=>$request->img->store('public/about'),
             ]);
 
@@ -120,10 +124,14 @@ class AboutController extends Controller
             $about->tel = $request->phone;
             $about->email = $request->email;
             $about->num1 = $request->num1;
-                $about->num2  =  $request->num2;
-                $about->num3  =  $request->num3;
-                $about->num4  =  $request->num4;
-                $about->img = $request->img->store('public/about');
+            $about->num2  =  $request->num2;
+           $about->num3  =  $request->num3;
+           $about->num4  =  $request->num4;
+           $about->face = $request->face;
+           $about->inst  =  $request->inst;
+           $about->twit  =  $request->twit;
+           $about->gplus  =  $request->gplus;
+           $about->img = $request->img->store('public/about');
 
         if($about->save()) {
             \Session::flash('success','Your Profile is successfully create');
