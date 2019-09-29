@@ -9,6 +9,7 @@
     @yield('stylesheets')
 </head>
 <body>
+    @include('_includes.messages')
      @include('_includes.navbar')
 
      @yield('content')

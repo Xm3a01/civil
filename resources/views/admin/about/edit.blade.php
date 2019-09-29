@@ -62,19 +62,19 @@
                             <div class="row">
                                 <div class="col-md-3">
                                    <label class="col-sm-12" for="num1">Number</label>
-                                   <input type="number" name="num1" id="" class="form-control"> 
+                                   <input type="number" name="num1" id="" class="form-control"  value="{{$about->num1}}"> 
                                 </div>
                                 <div class="col-md-3">
                                   <label class="col-sm-12" for="img">Number</label>
-                                  <input type="number" name="num2" id="" class="form-control">
+                                  <input type="number" name="num2" id="" class="form-control" value="{{$about->num2}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="col-sm-12" for="img">Number</label>
-                                    <input type="number" name="num3" id="" class="form-control">
+                                    <input type="number" name="num3" id="" class="form-control" value="{{$about->num3}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="col-sm-12" for="img">Number</label>
-                                    <input type="number" name="num4" id="" class="form-control">
+                                    <input type="number" name="num4" id="" class="form-control" value="{{$about->num4}}">
                                 </div>
                             </div>
                         </div>
@@ -82,19 +82,19 @@
                             <div class="row">
                                 <div class="col-md-3">
                                    <label class="col-sm-12" for="num1">Facebook</label>
-                                   <input type="text" name="face" id="" class="form-control"> 
+                                   <input type="text" name="face" id="" class="form-control" value="{{$about->face}}"> 
                                 </div>
                                 <div class="col-md-3">
                                   <label class="col-sm-12" for="img">Instgram</label>
-                                  <input type="text" name="inst" id="" class="form-control">
+                                  <input type="text" name="inst" id="" class="form-control" value="{{$about->inst}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="col-sm-12" for="img">Twitter</label>
-                                    <input type="text" name="twit" id="" class="form-control">
+                                    <input type="text" name="twit" id="" class="form-control" value="{{$about->twit}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="col-sm-12" for="img">Google + </label>
-                                    <input type="text" name="gplus" id="" class="form-control">
+                                    <input type="text" name="gplus" id="" class="form-control" value="{{$about->gplus}}">
                                 </div>
                             </div>
                         </div>

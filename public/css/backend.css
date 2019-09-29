@@ -43,3 +43,7 @@
 .en_part {
 	margin-left: -72px;
 }
+
+.non-border {
+	border: none;
+}

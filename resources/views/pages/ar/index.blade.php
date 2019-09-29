@@ -13,7 +13,11 @@
     <div class="banner_text_iner">
     <h1><span>{{$article->ar_title}} 
     </span></h1>
-     <p>{!! str_limit($article->ar_body, $limit=500) !!}</p>
+    <div class="card col-md-10 non-border">
+        <div class="card-body">
+            <p>{!! str_limit($article->ar_body, $limit=500) !!}</p>
+        </div>
+    </div>
      <a href="{{route('show.ar',$article->id)}}" class="btn_1">المزيد </a>
                             </div>
                         </div>
@@ -27,8 +31,12 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-6 col-lg-6">
                         <div class="about_part_text">
-                            <h2>عنوان المقال</h2>
-                            <p>{{ $art }}</p>
+                            <h2>{{$article2->ar_title}}</h2>
+                            <div class="card col-md-10 non-border">
+                                    <div class="card-body">
+                                        <p>{!!  $art !!}</p>
+                                    </div>
+                                </div>                   
                             <div class="about_text_iner">
                                 <div class="about_text_counter">
                                     <h2 id="years"></h2>
@@ -73,7 +81,7 @@
                                     <img src="{{Storage::url($item->img)}}" alt="offer_img_1">
                                     <div class="hover_text">
                                         <p>اخر المقالات</p>
-                                        <a href="{{route('show.ar',$article->id)}}"><h2>{{$article->ar_title}}</h2></a>
+                                        <a href="{{route('show.ar',$article->id)}}"><h2>{{$item->ar_title}}</h2></a>
                                     </div>
                                 </div>
                             </div>
@@ -171,6 +179,23 @@
         </section>
         <section class="member_counter padding_bottom countdown-part ">
             <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+
+                    </div>
+                    <div class="col-lg-5 col-sm-10">
+                        <div class="section_tittle" style="text-align:right; direction:rtl">
+                            <h2>مؤقت للفترة الانتقاليه</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-10">
+                        <div class="filters portfolio-filter project_menu_item">
+                            <ul>
+                                {{-- <li class="active" data-filter="*">الكل</li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_counter_icon">

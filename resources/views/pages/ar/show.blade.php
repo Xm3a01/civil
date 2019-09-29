@@ -16,9 +16,13 @@
                     <div class="blog_details" >
                        <h2>{{$article->ar_title}}
                        </h2>
-                       <p class="excert" >
-                          {!! $article->ar_body !!}
-                       </p>
+                       <div class="card">
+                          <div class="card-body">
+                             <p class="excert" >
+                                {!! $article->ar_body !!}
+                             </p>
+                          </div>
+                       </div>
                     </div>
                  </div>
               </div>
@@ -39,7 +43,7 @@
                        @endforeach
                        <br>
                        <hr>
-                       <a class="btn btn-1" href="{{route('all.ar')}}">-> عرض الكل</a>
+                       <a class="btn btn-1" href="{{route('all.ar')}}"> عرض الكل</a>
                     </aside>
                  </div>
               </div>

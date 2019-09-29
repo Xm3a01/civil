@@ -39,6 +39,10 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
+        $file = '';
+        if($request->hasFile('img')){
+           $file =  $request->img->store('public/about');
+        }
             $this->validate($request, [
                 'profile'=>'required',
                 'ar_profile'=>'required',
@@ -46,7 +50,7 @@ class AboutController extends Controller
                 'ar_address'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'img' => 'required'
+                'img' => 'required|image'
             ]);
             $about = About::create([
                 'profile'=>$request->profile,
@@ -63,8 +67,9 @@ class AboutController extends Controller
                  'inst'  =>  $request->inst,
                  'twit'  =>  $request->twit,
                  'gplus'  =>  $request->gplus,
-                'img'=>$request->img->store('public/about'),
-            ]);
+                 'img'   => $file,
+                 ]);
+                     
 
             if($about->save()) {
                 \Session::flash('success','Your Profile is successfully create');
@@ -108,6 +113,10 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $file = '';
+        if($request->hasFile('img')){
+           $file =  $request->img->store('public/about');
+        }
         $this->validate($request, [
             'profile'=>'required',
             'ar_profile'=>'required',
@@ -115,6 +124,10 @@ class AboutController extends Controller
             'ar_address'=>'required',
             'phone'=>'required',
             'email'=>'required',
+            'num1'=>'required',
+            'num2'=>'required',
+            'num3'=>'required',
+            'num4'=>'required',
         ]);
         $about = About::findOrFail($id);
             $about->profile  = $request->profile;
@@ -131,7 +144,8 @@ class AboutController extends Controller
            $about->inst  =  $request->inst;
            $about->twit  =  $request->twit;
            $about->gplus  =  $request->gplus;
-           $about->img = $request->img->store('public/about');
+            $about->img = $file;
+
 
         if($about->save()) {
             \Session::flash('success','Your Profile is successfully create');

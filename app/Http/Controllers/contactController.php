@@ -49,8 +49,8 @@ class contactController extends Controller
         public function storeAr(Request $request)
         {
              $message = array(
-                'name.required'=>'يجب ملأ خانت لاسم',
-                'email.required'=>'يجب ملأ خانت البريد اللاكتروني',
+                'name.required'=>'يجب ملأ خانة لاسم',
+                'email.required'=>'يجب ملأ خانة البريد اللاكتروني',
                 'email.email'=>'البريد اللاكتروني غير صحيح',
                 'msg.required'=>'لابدا من وجود رساله',
             );
@@ -62,12 +62,11 @@ class contactController extends Controller
             ],$message);
     
         $contact = [];
-        return $contact;
+        
         $contact['name'] = $request->get('name');
         $contact['email'] = $request->get('email');
         $contact['subj'] = $request->get('subj');
         $contact['msg'] = $request->get('msg');
-        
          Mail::send(new contactMail($contact));
          Session::flash('success','تم ارسال  بنجاح');
         return redirect('/contact/ar');

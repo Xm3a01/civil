@@ -49,4 +49,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::put('event/update', 'EventController@update')->name('event.update');
     Route::delete('event/delete', 'EventController@delete')->name('event.delete');
     Route::resource('abouts','AboutController')->except(['show', ]);
+    Route::resource('users','UserController')->except(['index','delete']);
+
+    // Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    // Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 });
