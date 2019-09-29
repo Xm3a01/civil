@@ -14,10 +14,10 @@
                     <h4>Media</h4>
                     <div class="d-sm-flex justify-content-between text-center">
                         <ul class="social-icons row">
-                           <li class="col-md-3"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                           <li class="col-md-3"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                           <li class="col-md-3"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                           <li class="col-md-3"><a href="#"><i class="fa fa-behance"></i></a></li>
+                           <li class="col-md-3"><a href="{{$about->face}}"><i class="fa fa-facebook-f"></i></a></li>
+                           <li class="col-md-3"><a href="{{$about->twit}}"><i class="fa fa-twitter"></i></a></li>
+                           <li class="col-md-3"><a href="{{$about->inst}}"><i class="fa fa-instagram"></i></a></li>
+                           <li class="col-md-3"><a href="{{$about->gplus}}"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                      </div>
                 </div>

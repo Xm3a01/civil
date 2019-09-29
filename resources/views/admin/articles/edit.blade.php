@@ -23,15 +23,28 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
+                    <div class="form-group">
+                   <label class="col-md-12" for="body">Article title</label>
+                    <div class="col-md-12">
+                        <input class="form-control" name="title" placeholder="Title" value="{{$article->title}}">
+                    </div>
+                </div>
                     <label class="col-md-12" for="body">Article body</label>
                     <div class="col-md-12">
-                        <textarea class="form-control" id="mymce" name="body" rows="4">{{$article->body}}</textarea>
+                        <textarea class="form-control" id="" name="body" rows="4">{{$article->body}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group" style="text-align:right">
+                   <label class="col-md-12" for="body">العنوان</label>
+                    <div class="col-md-12" >
+                        <input class="form-control" name="ar_title" placeholder="العنــــــــــوان" value="{{ $article->ar_title}}" style="text-align:right">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-12" for="ar_body">Article arabic body</label>
                     <div class="col-md-12">
-                        <textarea class="form-control" id="mymce" name="ar_body">{{$article->ar_body}}</textarea>
+                        <textarea class="form-control" id="" name="ar_body">{{$article->ar_body}}</textarea>
                     </div>
                 </div>
                 <div class="form-group">

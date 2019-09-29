@@ -10,7 +10,11 @@
     <div class="banner_text_iner">
     <h1><span>{{$article->title}}
     </span></h1>
-     <p>{!! str_limit($article->body, $limit=500)  !!}</p>
+    <div class="card col-md-10 non-border">
+        <div class="card-body">
+             {!! str_limit($article->body , $limit=50 ) !!}
+        </div>
+    </div>
      <a href="{{route('civil.show',$article->id)}}" class="btn_1">View more </a>
                             </div>
                         </div>
@@ -26,8 +30,12 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-6 col-lg-6">
                         <div class="about_part_text en_part">
-                            <h2>We Are The best</h2>
-                            <p>{!! $art !!}</p>
+                            <h2>{{$article2->title}}</h2>
+                            <div class="card col-md-10 non-border">
+                                    <div class="card-body">
+                                        {!! $art !!}
+                                    </div>
+                                </div>
                             <div class="about_text_iner">
                                 <div class="about_text_counter">
                                     <h2 id="years"></h2>
@@ -52,19 +60,13 @@
         <section class="our_project section_padding" id="portfolio">
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-lg-5 col-sm-10">
+                    <div class="col-lg-7 col-sm-10">
                         <div class="section_tittle">
-                            {{-- <h2>Civilian Sudan</h2> --}}
+                            <h2>latset Articles</h2>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-10">
                         <div class="filters portfolio-filter project_menu_item">
-                            <ul>
-                                <li class="active" data-filter="*">All</li>
-                                <li data-filter=".buildings">Buildings</li>
-                                <li data-filter=".rebuild">Rebuild</li>
-                                <li data-filter=".architecture">Architecture</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -178,6 +180,17 @@
 
         <section class="member_counter padding_bottom countdown-part " >
             <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-12 col-sm-10">
+                        <div class="section_tittle">
+                            <h2>Transaction period countdown</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-10">
+                        <div class="filters portfolio-filter project_menu_item">
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_counter_icon">

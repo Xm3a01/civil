@@ -114,7 +114,7 @@ class BrowseController extends Controller
         $articles = Article::all();
         $about = DB::table('abouts')->latest()->limit(1)->first();
 
-        return view('pages.all')->withArticles($articles)->withAbout($about);
+        return view('pages.ar.all')->withArticles($articles)->withAbout($about);
     }
 
 

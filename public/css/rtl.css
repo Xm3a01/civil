@@ -50,3 +50,6 @@ body {
 .contact-info__icon i, .contact-info__icon span {
     padding-left: 22px;
 }
+.single-post .card {
+    border:none;
+}

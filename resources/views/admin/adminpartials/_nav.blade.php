@@ -36,6 +36,9 @@
                                 {{ csrf_field() }}
                             </form>
                     </li>
+                    <li>
+                        <a href="{{route('users.show',Auth::user()->id)}}"><i class="fa fa-user"></i> My account</a>
+                    </li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>

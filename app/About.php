@@ -18,5 +18,9 @@ class About extends Model
         'num2',
         'num3',
         'num4',
+        'face',
+        'inst',
+        'twit',
+        'gplus',
     ];
 }

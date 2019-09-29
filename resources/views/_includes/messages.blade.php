@@ -1,4 +1,3 @@
-<!-- Gives a success notification if the post was saved-->
 @if(Session::has('success'))
 
 <div class="alert alert-success" role="alert">
@@ -21,4 +20,3 @@
 </div>
 
 @endif
-

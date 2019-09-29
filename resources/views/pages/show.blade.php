@@ -12,9 +12,13 @@
                 <div class="blog_details">
                    <h2>{{$article->title}}
                    </h2>
-                   <p class="excert">
-                      {!! $article->body !!}
-                   </p>
+                    <div class="card">
+                       <div class="card-body">
+                          <p class="excert">
+                             {{ $article->body }}
+                          </p>
+                       </div>
+                    </div>
                 </div>
              </div>
              {{-- <div class="navigation-top">
